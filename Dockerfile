@@ -1,6 +1,6 @@
 FROM wehkamp/jre:8.121.13-r0_02
 MAINTAINER Prometheus Team <prometheus-developers@googlegroups.com>
-LABEL container.name=wehkamp/prometheus-cloudwatch-exporter:1.2
+LABEL container.name=wehkamp/prometheus-cloudwatch-exporter:1.3
 
 EXPOSE 9106
 
@@ -12,6 +12,7 @@ RUN apk update \
     && mv target/cloudwatch_exporter-*-with-dependencies.jar /cloudwatch_exporter.jar \
     && apk del maven openjdk8 \
     && rm -rf /cloudwatch_exporter
+
 
 WORKDIR /
 COPY config.yml /
