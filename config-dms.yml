@@ -1,0 +1,267 @@
+---
+region: eu-west-1
+
+# Request data that spans this range:
+range_seconds: 120
+# Request data that is already this old:
+delay_seconds: 120
+# How often do we query AWS?
+period_seconds: 120
+
+metrics:
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: FullLoadThroughputRowsSource
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+    
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCLatencySource
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCLatencyTarget
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: AvailableMemory
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CPUAllocated
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: DiskQueueDepth
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]	  
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: FreeStorageSpace
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: FreeMemory
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: FreeableMemory
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: MemoryAllocated
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: WriteIOPS
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: ReadIOPS
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: WriteThroughput
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: ReadThroughput
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: WriteLatency
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: ReadLatency
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: NetworkTransmitThroughput
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]	  
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: NetworkReceiveThroughput
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: FullLoadThroughputBandwidthTarget
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: FullLoadThroughputRowsTarget
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCIncomingChanges
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCChangesMemorySource
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCChangesMemoryTarget
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCChangesDiskSource
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCChangesDiskTarget
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+ 
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCThroughputBandwidthSource
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCThroughputBandwidthTarget
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCThroughputRowsSource
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CDCThroughputRowsTarget
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: CPUUtilization
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: SwapUsage
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
+
+  - aws_namespace: AWS/DMS
+    aws_metric_name: MemoryUsage
+    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
+    aws_statistics: [Average]
+    aws_dimension_select_regex:
+      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]	  
