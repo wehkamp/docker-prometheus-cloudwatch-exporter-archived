@@ -264,4 +264,4 @@ metrics:
     aws_statistics: [Average]
     aws_dimension_select_regex:
       ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]	  
+      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
