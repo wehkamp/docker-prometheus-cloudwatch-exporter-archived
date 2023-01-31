@@ -84,59 +84,6 @@ metrics:
       LoadBalancer: ["${APP_LOADBALANCERNAME_REGEX}"]
       TargetGroup: ["${APP_LOADBALANCERTG_REGEX}"]
 
-  - aws_namespace: AWS/DMS
-    aws_metric_name: CPUUtilization
-    aws_dimensions: [ReplicationInstanceIdentifier]
-    aws_statistics: [Average]
-    aws_dimension_select_regex:
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
-
-  - aws_namespace: AWS/DMS
-    aws_metric_name: FreeStorageSpace
-    aws_dimensions: [ReplicationInstanceIdentifier]
-    aws_statistics: [Average]
-    aws_dimension_select_regex:
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
-
-  - aws_namespace: AWS/DMS
-    aws_metric_name: FreeableMemory
-    aws_dimensions: [ReplicationInstanceIdentifier]
-    aws_statistics: [Average]
-    aws_dimension_select_regex:
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
-
-  - aws_namespace: AWS/DMS
-    aws_metric_name: SwapUsage
-    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
-    aws_statistics: [Average]
-    aws_dimension_select_regex:
-      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
-
-  - aws_namespace: AWS/DMS
-    aws_metric_name: AvailableMemory
-    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
-    aws_statistics: [Average]
-    aws_dimension_select_regex:
-      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
-
-  - aws_namespace: AWS/DMS
-    aws_metric_name: FullLoadThroughputRowsSource
-    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
-    aws_statistics: [Average]
-    aws_dimension_select_regex:
-      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
-
-  - aws_namespace: AWS/DMS
-    aws_metric_name: FullLoadThroughputRowsTarget
-    aws_dimensions: [ReplicationInstanceIdentifier, ReplicationTaskIdentifier]
-    aws_statistics: [Average]
-    aws_dimension_select_regex:
-      ReplicationTaskIdentifier: ["${DMS_REPL_TASK_REGEX}"]
-      ReplicationInstanceIdentifier: ["${DMS_REPL_INSTANCES_REGEX}"]
-
   - aws_namespace: AWS/ApiGateway
     aws_metric_name: 4XXError
     aws_dimensions: [ApiName]
