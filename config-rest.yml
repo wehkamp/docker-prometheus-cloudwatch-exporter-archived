@@ -140,6 +140,16 @@ metrics:
     aws_metric_name: NumberOfMessagesSent
     aws_dimensions: [QueueName]
 
+  - aws_namespace: AWS/Kafka
+    aws_metric_name: CPUCreditBalance
+    aws_dimensions: [ClusterName]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/Kafka
+    aws_metric_name: CPUCreditUsage
+    aws_dimensions: [ClusterName]
+    aws_statistics: [Average]
+
   - aws_namespace: monitor-aws-account-limits
     aws_metric_name: available_ips
     aws_dimensions: [vpcid, cidrblock]
