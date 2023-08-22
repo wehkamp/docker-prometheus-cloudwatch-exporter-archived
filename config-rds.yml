@@ -82,3 +82,7 @@ metrics:
   - aws_namespace: RDS
     aws_metric_name: DBInstanceStatus
     aws_dimensions: [DBName]
+
+  - aws_namespace: RDS
+    aws_metric_name: DBAllocatedStorage
+    aws_dimensions: [DBName]
