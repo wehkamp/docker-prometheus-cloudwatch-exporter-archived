@@ -164,3 +164,15 @@ metrics:
 
   - aws_namespace: IpChangeAdyen
     aws_metric_name: IpChangeAdyen
+
+  - aws_namespace: AWS/SES
+    aws_metric_name: Send
+    aws_statistics: [Sum]
+
+  - aws_namespace: AWS/SES
+    aws_metric_name: Reputation.BounceRate
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/SES
+    aws_metric_name: Reputation.ComplaintRate
+    aws_statistics: [Average]
