@@ -1,3 +1,9 @@
+# **⚠️ THIS REPOSITORY IS ARCHIVED ⚠️**
+
+**This repository is no longer actively maintained and will not receive any further updates.**  
+All issues and pull requests will be closed, and no new contributions will be accepted. Please use at your own risk, as the software may contain outdated or unpatched components.
+
+
 CloudWatch Exporter
 =====
 
